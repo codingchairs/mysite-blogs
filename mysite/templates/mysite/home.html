@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% load socialaccount %}
+{% load staticfiles %}
+
+{% block content %}
+	
+	{% if not user.is_authenticated %}
+		<a href="/accounts/login/"><h3>Click here for Log In </h3></a>
+		</hr>
+		</hr>
+		<a href="{% provider_login_url 'github' %}">Sign Up via Github</a>
+		or <a href="accounts/signup/	">Register on mysite</a>
+	{% endif %}
+{% endblock%}

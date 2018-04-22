@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for edit_history in history %}
+        <div class="post">
+            <div class="date">
+                {{ edit_history.published_date }}
+            </div>
+            <p>{{ edit_history.author }}</p>
+            <h1><a href="#">{{ edit_history.title }}</a></h1>
+            <p>{{ edit_history.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
